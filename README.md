@@ -3,3 +3,4 @@ A simple desktop HMI to control and display commands with an Allen Bradly Contro
 
 This application uses PyQt5 and pylogix to build a simple human-machine-interface (HMI). The HMI provides desktop control of specific PLC functions and displays realtime PLC tags.
 
+![screen shot](https://github.com/Ionic-TG/ForceControl_HMI/blob/master/image_assets/screenshot.PNG)
