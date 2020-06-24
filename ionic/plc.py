@@ -21,6 +21,7 @@ class MachinePLC:
         self.command_pos = 0.0
         self.robot_request_bit = False
         self.motion_complete = False
+        self.force_motion_compete = False
         self.manual_run = False
         self.home_bit = False
 
@@ -73,7 +74,7 @@ class MachinePLC:
             self.current_position = self.plc.Read('Positioner.CurrentPosition').Value
             self.requested_position = self.plc.Read('RequestedPosition').Value
             self.robot_request_bit = self.plc.Read('IRC5:I.Data[0].0').Value
-            self.motion_complete = self.plc.Read('PositionerMotionOk').Value
+            self.motion_complete = self.plc.Read('PositionerMotionOk').Value or self.force_motion_compete
 
         except:
             print('RuntimeError: Error reading from plc')
